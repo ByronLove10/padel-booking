@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+
     "lint": "next lint",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+
     "test": "echo \"No unit tests yet\" && exit 0",
     "test:e2e": "playwright test"
   },
@@ -25,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "prettier": "^3"
   }
 }
