@@ -9,7 +9,7 @@ Supports authentication, role-based access (player, club manager, admin), bookin
 - **Database**: PostgreSQL
 - **Cache**: Redis
 - **Payments**: Stripe
-- **Infra**: Docker, GitHub Actions, AWS/GCP
+- **Infra**: Docker, GitHub Actions, Render, Vercel
 
 ## 🛠️ Getting Started
 ```bash
