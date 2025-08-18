@@ -1,0 +1,52 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Frontend: npm (Next.js)
+  - package-ecosystem: "npm"
+    directory: "/web"            # ajusta si tu app está en otra carpeta
+    schedule:
+      interval: "weekly"         # daily | weekly | monthly
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 10
+    labels: ["dependencies", "area:frontend"]
+    groups:
+      minor-and-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]  # evita majors al principio
+
+  # Backend: pip (FastAPI)
+  - package-ecosystem: "pip"
+    directory: "/api"            # ajusta a tu carpeta de backend
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:15"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 10
+    labels: ["dependencies", "area:backend"]
+    groups:
+      minor-and-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # GitHub Actions (para actualizar Actions del CI)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:30"
+      timezone: "Europe/Madrid"
+    labels: ["dependencies", "type:ci"]
