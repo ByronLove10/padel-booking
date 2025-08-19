@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.db import Base  # Base.metadata
 from app.core.settings import settings
+from app import models
 
 config = context.config
 
