@@ -10,3 +10,7 @@ httpx
 pydantic
 pydantic-settings
 psycopg[binary]
+pydantic[email]
+passlib[bcrypt]>=1.7.4
+python-multipart
+python-jose[cryptography]
