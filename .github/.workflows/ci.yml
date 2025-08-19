@@ -88,5 +88,7 @@ jobs:
 
       - name: Tests (pytest)
         working-directory: api
+        env:
+          DATABASE_URL: "sqlite:///:memory:"
         run: |
           pytest -q --maxfail=1 --disable-warnings --tb=short || echo "No tests yet, skipping"
