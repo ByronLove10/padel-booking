@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Numeric, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db import Base
 
+
 class PricingRule(Base):
     __tablename__ = "pricing_rules"
 

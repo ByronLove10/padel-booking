@@ -2,9 +2,11 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db import Base
 
+
 class TimeslotStatus(str):
     AVAILABLE = "available"
     BLOCKED = "blocked"
+
 
 class Timeslot(Base):
     __tablename__ = "timeslots"

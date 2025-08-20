@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, JSON, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db import Base
 
+
 class AuditLog(Base):
     __tablename__ = "audit_logs"
 

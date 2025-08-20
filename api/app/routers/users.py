@@ -9,6 +9,7 @@ router = APIRouter(prefix="/users", tags=["users"])
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+
 @router.post("/", response_model=schemas.UserRead)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     # comprobar si existe ya
@@ -20,7 +21,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
     new_user = models.User(
         email=user.email,
-        password_hash=hashed_pw,   # 👈 aquí usamos el hash
+        password_hash=hashed_pw,  # 👈 aquí usamos el hash
         role=user.role,
         name=user.name,
         phone=user.phone,

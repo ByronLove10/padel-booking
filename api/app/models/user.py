@@ -2,10 +2,12 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from app.db import Base
 
+
 class UserRole(str):
     PLAYER = "player"
     CLUB_MANAGER = "club_manager"
     ADMIN = "admin"
+
 
 class User(Base):
     __tablename__ = "users"

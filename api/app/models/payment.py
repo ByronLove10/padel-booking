@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Numeric, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from app.db import Base
 
+
 class Payment(Base):
     __tablename__ = "payments"
 
