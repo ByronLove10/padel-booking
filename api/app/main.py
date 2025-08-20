@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.settings import settings
-from app.routers import users, auth
+from app.routers import users, auth, clubs
 
 app = FastAPI(title="Padel Booking API")
 app.add_middleware(
@@ -15,6 +15,8 @@ app.add_middleware(
 app.include_router(users.router)
 
 app.include_router(auth.router)
+
+app.include_router(clubs.router)
 
 
 @app.get("/health")
